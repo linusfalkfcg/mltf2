@@ -1,82 +1,127 @@
 import Head from 'next/head'
 
+import { useState } from 'react'
+
 export default function Home() {
+  const [riskCategory, setRiskCategory] = useState('')
+
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
+    <div className="flex flex-col items-center min-h-screen">
       <Head>
-        <title>Create Next App</title>
+        <title>MLTF</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
-        <h1 className="text-6xl font-bold">
-          Welcome to{' '}
-          <a className="text-blue-600" href="https://nextjs.org">
-            Next.js!
-          </a>
-        </h1>
+      <header className="h-14 w-full flex justify-center items-center sticky top-0 z-[100] border-b-[1px] bg-[#004c42] text-white">
+        <div className="w-full max-w-[1024px] h-full flex items-center">
+          <button className="flex justify-start items-center gap-x-5 h-full px-4 button-on-dark">
+            <h1 className="text-4xl">FCG</h1>
+            <p className="text-sm font-light">MLTF</p>
+          </button>
+          {/* <Navbar /> */}
+        </div>
+      </header>
 
-        <p className="mt-3 text-2xl">
-          Get started by editing{' '}
-          <code className="p-3 font-mono text-lg bg-gray-100 rounded-md">
-            pages/index.tsx
-          </code>
-        </p>
-
-        <div className="flex flex-wrap items-center justify-around max-w-4xl mt-6 sm:w-full">
-          <a
-            href="https://nextjs.org/docs"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Documentation &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Find in-depth information about Next.js features and API.
-            </p>
-          </a>
-
-          <a
-            href="https://nextjs.org/learn"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Learn &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Learn about Next.js in an interactive course with quizzes!
-            </p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Examples &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Discover and deploy boilerplate example Next.js projects.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Deploy &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+      {/* <main className="w-full lg:min-w-[1024px] lg:w-[75%] p-4 flex flex-col lg:flex-row gap-5"> */}
+      <main className="w-full max-w-[512px] lg:max-w-[1024px] lg:grow p-4 flex flex-col items-start lg:flex-row gap-8 lg:border-x-[1px]">
+        <button className="lg:hidden button-on-light ">
+          Add <span className="text-xl leading-3">+</span>
+        </button>
+        <div className="hidden lg:flex flex-col flex-1 border-[1px] divide-y-[1px]">
+          <div className="bg-[#004c42] text-white p-2">Add risk</div>
+          <form action="" className="w-full flex flex-col divide-y-[1px]">
+            <fieldset className="flex flex-col gap-1 ">
+              <div className="w-full px-2 relative ">
+                <label
+                  htmlFor="riskCategory"
+                  className="px-2 text-gray-500 text-xs leading-3 font-light absolute top-1 left-0 pointer-events-none"
+                >
+                  {riskCategory ? 'Risk Category' : ''}
+                </label>
+                <select
+                  name="riskCategory"
+                  id="riskCategory"
+                  className={`w-full outline-none px-2 cursor-pointer hover:underline ${
+                    riskCategory ? 'pt-5 pb-1' : 'py-3 text-gray-500'
+                  }`}
+                  value={riskCategory}
+                  onChange={({ target }) => setRiskCategory(target.value)}
+                >
+                  <option value="" className="  text-gray-500 italic">
+                    Risk Category
+                  </option>
+                  <option value="Hello" className="text-black">
+                    Hej
+                  </option>
+                  <option value="På" className="text-black">
+                    På
+                  </option>
+                  <option value="Dig" className="text-black">
+                    Dig
+                  </option>
+                  <option value="Du" className="text-black">
+                    Du
+                  </option>
+                </select>
+              </div>
+            </fieldset>
+            <fieldset className="flex flex-col gap-1 ">
+              <div className="w-full px-2 relative">
+                <label
+                  htmlFor="riskCategory"
+                  className="px-2 text-gray-500 text-xs leading-3 font-light absolute top-1 left-0 pointer-events-none"
+                >
+                  {riskCategory ? 'Risk Category' : ''}
+                </label>
+                <select
+                  name="riskCategory"
+                  id="riskCategory"
+                  className={`w-full outline-none px-2 cursor-pointer hover:underline ${
+                    riskCategory ? 'pt-5 pb-1' : 'py-3 text-gray-500'
+                  }`}
+                  value={riskCategory}
+                  onChange={({ target }) => setRiskCategory(target.value)}
+                >
+                  <option value="" className="  text-gray-500 italic">
+                    Risk Category
+                  </option>
+                  <option value="Hello" className="text-black">
+                    Hej
+                  </option>
+                  <option value="På" className="text-black">
+                    På
+                  </option>
+                  <option value="Dig" className="text-black">
+                    Dig
+                  </option>
+                  <option value="Du" className="text-black">
+                    Du
+                  </option>
+                </select>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+        <div className="flex-1 w-full border-[1px] flex flex-col divide-y-[1px]">
+          <div className="bg-[#004c42] text-white p-2">Selected risks</div>
+          <div className="py-1 px-2 hover:bg-[#e5d3b2] hover:bg-opacity-20">
+            <h3 className="font-semibold">Risk Category</h3>
+            <p className="font-light">Risk Type</p>
+          </div>
+          <div className="py-1 px-2 hover:bg-[#e5d3b2] hover:bg-opacity-20">
+            <h3 className="font-semibold">Risk Category</h3>
+            <p className="font-light">Risk Type</p>
+          </div>
+          <div className="py-1 px-2 hover:bg-[#e5d3b2] hover:bg-opacity-20">
+            <h3 className="font-semibold">Risk Category</h3>
+            <p className="font-light">Risk Type</p>
+          </div>
+          <div className="py-1 px-2 hover:bg-[#e5d3b2] hover:bg-opacity-20">
+            <h3 className="font-semibold">Risk Category</h3>
+            <p className="font-light">Risk Type</p>
+          </div>
         </div>
       </main>
-
-      <footer className="flex items-center justify-center w-full h-24 border-t">
-        <a
-          className="flex items-center justify-center"
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className="h-4 ml-2" />
-        </a>
-      </footer>
     </div>
   )
 }
