@@ -14,19 +14,19 @@ export default function Home() {
 
       <header className="h-14 w-full flex justify-center items-center sticky top-0 z-[100] border-b-[1px] bg-[#004c42] text-white">
         <div className="w-full max-w-[1024px] h-full flex items-center">
-          <button className="flex justify-start items-center gap-x-5 h-full px-4 button-on-dark">
+          <div className="flex justify-start items-center gap-x-5 h-full px-4 button-on-dark">
             <h1 className="text-4xl">FCG</h1>
             <p className="text-sm font-light">MLTF</p>
-          </button>
+          </div>
           {/* <Navbar /> */}
         </div>
       </header>
 
       {/* <main className="w-full lg:min-w-[1024px] lg:w-[75%] p-4 flex flex-col lg:flex-row gap-5"> */}
       <main className="w-full max-w-[512px] lg:max-w-[1024px] lg:grow p-4 flex flex-col items-start lg:flex-row gap-8 lg:border-x-[1px]">
-        <button className="lg:hidden button-on-light ">
+        <div className="lg:hidden button-on-light ">
           Add <span className="text-xl leading-3">+</span>
-        </button>
+        </div>
         <div className="hidden lg:flex flex-col flex-1 border-[1px] divide-y-[1px]">
           <div className="bg-[#004c42] text-white p-2">Add risk</div>
           <form action="" className="w-full flex flex-col divide-y-[1px]">
